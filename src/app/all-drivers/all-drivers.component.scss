@@ -1,0 +1,19 @@
+
+.title{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 5px;
+}
+
+.table-container {
+    overflow-x: hidden;
+    overflow-y: scroll;
+    text-align: center;
+    margin: 10px 100px 10px 100px; 
+    height: 90%;
+}
+
+button{
+    margin-right: 5px;
+}

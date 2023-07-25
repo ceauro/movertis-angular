@@ -1,0 +1,21 @@
+<h1 mat-dialog-title>Estado Actual</h1>
+<div mat-dialog-content>
+    <table mat-table [dataSource]="data.status" class="mat-elevation-z8">
+        
+        <ng-container matColumnDef="actualActivity">
+            <th mat-header-cell *matHeaderCellDef> Estado Actual </th>
+            <td mat-cell *matCellDef="let element"> {{element.actualActivity}} </td>
+        </ng-container>
+
+        <ng-container matColumnDef="nextRest">
+            <th mat-header-cell *matHeaderCellDef> Fecha Siguiente Descanso </th>
+            <td mat-cell *matCellDef="let element"> {{element.nextRest}} </td>
+        </ng-container>
+
+        <tr mat-header-row *matHeaderRowDef="data.displayedColumns"></tr>
+        <tr mat-row *matRowDef="let row; columns: data.displayedColumns;"></tr>
+    </table>
+</div>
+<div mat-dialog-actions>
+  <button mat-button mat-dialog-close cdkFocusInitial routerLink="/">Ok</button>
+</div>

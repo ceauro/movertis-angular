@@ -1,0 +1,27 @@
+<h1 mat-dialog-title>Unidades</h1>
+<div mat-dialog-content>
+    <table mat-table [dataSource]="data.units" class="mat-elevation-z8">
+        
+        <!-- ID Column -->
+        <ng-container matColumnDef="unitId">
+            <th mat-header-cell *matHeaderCellDef> ID Unidad </th>
+            <td mat-cell *matCellDef="let element"> {{element.unitId}} </td>
+        </ng-container>
+
+        <!-- Actions Column -->
+        <ng-container matColumnDef="actions">
+            <th mat-header-cell *matHeaderCellDef> Ver </th>
+            <td mat-cell *matCellDef="let element">  
+                <button mat-stroked-button color="primary" routerLink="/summary-kms/{{element.unitId}}">
+                    Kilometros
+                </button>
+            </td>
+        </ng-container>
+
+        <tr mat-header-row *matHeaderRowDef="data.displayedColumns"></tr>
+        <tr mat-row *matRowDef="let row; columns: data.displayedColumns;"></tr>
+    </table>
+</div>
+<div mat-dialog-actions>
+  <button mat-button mat-dialog-close cdkFocusInitial routerLink="/">Ok</button>
+</div>
